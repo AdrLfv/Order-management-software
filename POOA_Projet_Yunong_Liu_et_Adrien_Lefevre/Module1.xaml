@@ -1,0 +1,187 @@
+﻿<Window x:Class="POOA_Projet_Yunong_Liu_et_Adrien_Lefevre.Module1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:POOA_Projet_Yunong_Liu_et_Adrien_Lefevre"
+        mc:Ignorable="d"
+        Title="Module1" Height="625.5" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="769*"/>
+            <ColumnDefinition Width="24*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                <GradientStop Color="White"/>
+                <GradientStop Color="#FFBB8102" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <ListBox Name ="ButtonListBox" HorizontalAlignment="Left" Height="445" Margin="98,10,0,0" VerticalAlignment="Top" Width="625" Visibility="Visible">
+
+            <Button Name ="Bouton1" Margin="5,5,10,5"  Height="49" Width="570" Click="AfficherAlphabetiqueClients" >
+                <TextBlock TextWrapping="Wrap" Height="43" FontSize="20" FontFamily="Dubai Medium" HorizontalAlignment="Right" Width="560" LineHeight="6" TextAlignment="Center" Text=" Afficher l'ensemble des Clients par ordre alphabétique"/>
+            </Button>
+
+            <Button Name ="Bouton2"  Margin="5,5,10,5" Height="49" Click="AfficherAlphabetiqueCommis" Width="570" >
+                <TextBlock TextWrapping="Wrap" Height="43" FontSize="20" TextAlignment="Center" FontFamily="Dubai Medium" HorizontalAlignment="Right" Width="487" Text="Afficher l'ensemble des Commis par ordre alphabétique"/>
+            </Button>
+
+            <Button Name ="Bouton3"  Margin="5,5,10,5" Height="49" Click="AfficherAlphabetiqueLivreurs" Width="570" >
+                <TextBlock TextWrapping="Wrap" Height="43" FontSize="20" TextAlignment="Center" FontFamily="Dubai Medium" HorizontalAlignment="Right" Width="560" Text="Afficher l'ensemble des Livreurs par ordre alphabétique"/>
+
+            </Button>
+
+            <Button Name ="Bouton4"  Margin="5,5,10,5" Height="49" Click="AfficherVille" Width="570" >
+                <TextBlock TextWrapping="Wrap" Height="43" FontSize="20" TextAlignment="Center" FontFamily="Dubai Medium" HorizontalAlignment="Right" Width="513" Text="Afficher l'ensemble des Clients par ville"/>
+
+            </Button>
+
+            <Button Name ="Bouton5"  Margin="5,5,10,5" Height="49" Click="AfficherMeilleurClient" Width="570" >
+                <TextBlock TextWrapping="Wrap" Height="43" FontSize="20" TextAlignment="Center" FontFamily="Dubai Medium" HorizontalAlignment="Right" Width="531" Text=" Afficher l'ensemble des Clients par montant des achats cumulés"/>
+            </Button>
+
+            <Button Name ="Bouton6"  Margin="5,5,10,5" Height="49" Click="AjoutClient" Width="570" >
+                <TextBlock TextWrapping="Wrap" Text="Ajouter un Client" Height="43" FontSize="20" TextAlignment="Center" FontFamily="Dubai Medium" HorizontalAlignment="Right" Width="374"/>
+            </Button>
+
+            <Button Name ="Bouton7"  Margin="5,5,10,5" Height="49" Click="AjoutCommis" Width="570" >
+                <TextBlock TextWrapping="Wrap" Text="Ajouter un Commis" Height="43" FontSize="20" TextAlignment="Center" FontFamily="Dubai Medium" HorizontalAlignment="Right" Width="374"/>
+            </Button>
+
+            <Button Name ="Bouton8"  Margin="5,5,10,5" Height="49" Click="AjoutLivreur" Width="570" >
+                <TextBlock TextWrapping="Wrap" Text="Ajouter un Livreur" Height="43" FontSize="20" TextAlignment="Center" FontFamily="Dubai Medium" HorizontalAlignment="Right" Width="374"/>
+            </Button>
+
+            <Button Name ="Bouton9"  Margin="5,5,10,5" Height="49" Click="SuppressionClient" Width="570" >
+                <TextBlock TextWrapping="Wrap" Text="Supprimer un Client" Height="43" FontSize="20" TextAlignment="Center" FontFamily="Dubai Medium" HorizontalAlignment="Right" Width="374"/>
+            </Button>
+
+            <Button Name ="Bouton10"  Margin="5,5,10,5" Height="49" Click="SuppressionCommis" Width="570" >
+                <TextBlock TextWrapping="Wrap" Text="Supprimer un Commis" Height="43" FontSize="20" TextAlignment="Center" FontFamily="Dubai Medium" HorizontalAlignment="Right" Width="374"/>
+            </Button>
+
+            <Button Name ="Bouton11"  Margin="5,5,10,5" Height="49" Click="SuppressionLivreur" Width="570" >
+                <TextBlock TextWrapping="Wrap" Text="Supprimer un Livreur" Height="43" FontSize="20" TextAlignment="Center" FontFamily="Dubai Medium" HorizontalAlignment="Right" Width="374"/>
+            </Button>
+
+            <Button Name ="Bouton12"  Margin="5,5,10,5" Height="49" Click="ModificationClient" Width="570" >
+                <TextBlock TextWrapping="Wrap" Text="Modifier un Client" Height="43" FontSize="20" TextAlignment="Center" FontFamily="Dubai Medium" HorizontalAlignment="Right" Width="374"/>
+            </Button>
+
+            <Button Name ="Bouton13"  Margin="5,5,10,5" Height="49" Click="ModificationCommis" Width="570" >
+                <TextBlock TextWrapping="Wrap" Text="Modifier un Commis" Height="43" FontSize="20" TextAlignment="Center" FontFamily="Dubai Medium" HorizontalAlignment="Right" Width="374"/>
+            </Button>
+
+            <Button Name ="Bouton14"  Margin="5,5,10,5" Height="49" Click="ModificationLivreur" Width="570" >
+                <TextBlock TextWrapping="Wrap" Text="Modifier un Livreur" Height="43" FontSize="20" TextAlignment="Center" FontFamily="Dubai Medium" HorizontalAlignment="Right" Width="374"/>
+            </Button>
+        </ListBox>
+
+
+        <StackPanel Name ="PanelBoxEtBlocksAjoutClient" HorizontalAlignment="Left" Height="393" Margin="185,62,0,0" VerticalAlignment="Top" Width="387" Visibility="Hidden">
+            <TextBlock TextWrapping="Wrap" Text="Rentrez le nom du client"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="" Margin="0,0,0,20" Name="TextBoxAjoutClient1"/>
+            <TextBlock TextWrapping="Wrap" Text="Rentrez le prenom du client"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="" Margin="0,0,0,20" Name="TextBoxAjoutClient2"/>
+            <TextBlock TextWrapping="Wrap" Text="Rentrez l'adresse du client"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="" Margin="0,0,0,20" Name="TextBoxAjoutClient3"/>
+            <TextBlock TextWrapping="Wrap" Text="Rentrez la ville du client"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="" Margin="0,0,0,20" Name="TextBoxAjoutClient4"/>
+            <TextBlock TextWrapping="Wrap" Text="Rentrez le numero de telephone du client"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="" Margin="0,0,0,20" Name="TextBoxAjoutClient5"/>
+        </StackPanel>
+        <StackPanel Name ="PanelBoxEtBlocksAjoutCommis" HorizontalAlignment="Left" Height="393" Margin="185,62,0,0" VerticalAlignment="Top" Width="387" Visibility="Hidden">
+            <TextBlock TextWrapping="Wrap" Text="Rentrez le nom du commis"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="" Margin="0,0,0,20" Name="TextBoxCommis1"/>
+            <TextBlock TextWrapping="Wrap" Text="Rentrez le prenom du commis"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="" Margin="0,0,0,20" Name="TextBoxCommis2"/>
+            <TextBlock TextWrapping="Wrap" Text="Rentrez l'adresse du commis"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="" Margin="0,0,0,20" Name="TextBoxCommis3"/>
+            <TextBlock TextWrapping="Wrap" Text="Rentrez le numero de telephone du commis"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="" Margin="0,0,0,20" Name="TextBoxCommis4"/>
+        </StackPanel>
+        <StackPanel Name ="PanelBoxEtBlocksAjoutLivreur" HorizontalAlignment="Left" Height="393" Margin="185,62,0,0" VerticalAlignment="Top" Width="387" Visibility="Hidden">
+            <TextBlock TextWrapping="Wrap" Text="Rentrez le nom du livreur"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="" Margin="0,0,0,20" Name="TextBoxLivreur1"/>
+            <TextBlock TextWrapping="Wrap" Text="Rentrez le prenom du livreur"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="" Margin="0,0,0,20" Name="TextBoxLivreur2"/>
+            <TextBlock TextWrapping="Wrap" Text="Rentrez le numero du livreur"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="" Margin="0,0,0,20" Name="TextBoxLivreur3"/>
+            <TextBlock TextWrapping="Wrap" Text="Rentrez l'adresse du livreur"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="" Margin="0,0,0,20" Name="TextBoxLivreur4"/>
+            <TextBlock TextWrapping="Wrap" Text="Rentrez le moyen de transport du livreur"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="" Margin="0,0,0,20" Name="TextBoxLivreur5"/>
+            <TextBlock TextWrapping="Wrap" Text="Rentrez l'etat du livreur (Sur place ou en congé)"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="" Margin="0,0,0,20" Name="TextBoxLivreur6"/>
+        </StackPanel>
+
+        <StackPanel Name ="PanelBoxEtBlocksModificationClient" HorizontalAlignment="Left" Height="393" Margin="185,62,0,0" VerticalAlignment="Top" Width="387" Visibility="Hidden">
+            <TextBlock TextWrapping="Wrap" Text="Rentrez le numero de telephone du client"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="" Margin="0,0,0,20" Name="TextBoxModificationClient0"/>
+            <TextBlock TextWrapping="Wrap" Text="Rentrez le nouveau nom du client"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="" Margin="0,0,0,20" Name="TextBoxModificationClient1"/>
+            <TextBlock TextWrapping="Wrap" Text="Rentrez le nouveau prenom du client"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="" Margin="0,0,0,20" Name="TextBoxModificationClient2"/>
+            <TextBlock TextWrapping="Wrap" Text="Rentrez la nouvelle adresse du client"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="" Margin="0,0,0,20" Name="TextBoxModificationClient3"/>
+            <TextBlock TextWrapping="Wrap" Text="Rentrez la nouvelle ville du client"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="" Margin="0,0,0,20" Name="TextBoxModificationClient4"/>
+            <TextBlock TextWrapping="Wrap" Text="Rentrez le nouveau numero de telephone du client"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="" Margin="0,0,0,20" Name="TextBoxModificationClient5"/>
+        </StackPanel>
+        <StackPanel Name ="PanelBoxEtBlocksModificationCommis" HorizontalAlignment="Left" Height="393" Margin="185,62,0,0" VerticalAlignment="Top" Width="387" Visibility="Hidden">
+            <TextBlock TextWrapping="Wrap" Text="Rentrez le numero de telephone du commis"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="" Margin="0,0,0,20" Name="TextBoxModificationCommis0"/>
+            <TextBlock TextWrapping="Wrap" Text="Rentrez le nouveau nom du commis"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="" Margin="0,0,0,20" Name="TextBoxModificationCommis1"/>
+            <TextBlock TextWrapping="Wrap" Text="Rentrez le nouveau prenom du commis"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="" Margin="0,0,0,20" Name="TextBoxModificationCommis2"/>
+            <TextBlock TextWrapping="Wrap" Text="Rentrez la nouvelle adresse du commis"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="" Margin="0,0,0,20" Name="TextBoxModificationCommis3"/>
+            <TextBlock TextWrapping="Wrap" Text="Rentrez le nouveau numéro du commis"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="" Margin="0,0,0,20" Name="TextBoxModificationCommis4"/>
+            <TextBlock TextWrapping="Wrap" Text="Rentrez le nouvel état du commis"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="" Margin="0,0,0,20" Name="TextBoxModificationCommis5"/>
+        </StackPanel>
+        <StackPanel Name ="PanelBoxEtBlocksModificationLivreur" HorizontalAlignment="Left" Height="393" Margin="185,62,0,0" VerticalAlignment="Top" Width="387" Visibility="Hidden">
+            <TextBlock TextWrapping="Wrap" Text="Rentrez le numero de telephone du livreur"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="" Margin="0,0,0,20" Name="TextBoxModificationLivreur0"/>
+            <TextBlock TextWrapping="Wrap" Text="Rentrez le nouveau nom du livreur"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="" Margin="0,0,0,20" Name="TextBoxModificationLivreur1"/>
+            <TextBlock TextWrapping="Wrap" Text="Rentrez le nouveau prenom du livreur"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="" Margin="0,0,0,20" Name="TextBoxModificationLivreur2"/>
+            <TextBlock TextWrapping="Wrap" Text="Rentrez la nouvelle adresse du livreur"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="" Margin="0,0,0,20" Name="TextBoxModificationLivreur3"/>
+            <TextBlock TextWrapping="Wrap" Text="Rentrez le nouveau numéro du livreur"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="" Margin="0,0,0,20" Name="TextBoxModificationLivreur4"/>
+            <TextBlock TextWrapping="Wrap" Text="Rentrez le nouvel état du livreur"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="" Margin="0,0,0,20" Name="TextBoxModificationLivreur5"/>
+            <TextBlock TextWrapping="Wrap" Text="Rentrez le nouveau moyen de transport du livreur"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="" Margin="0,0,0,20" Name="TextBoxModificationLivreur6"/>
+        </StackPanel>
+
+        <TextBlock Text="Choisissez une fonction" Name ="MonTexteBlock" HorizontalAlignment="Left" Margin="10,474,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="111" Width="399" Background="White" Visibility="Visible"/>
+        <TextBox Name ="MaTexteBox" HorizontalAlignment="Left" Height="23" Margin="603,455,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"  Visibility="Hidden"/>
+
+        <Button Name ="BoutonValiderAjoutClient" Content="Valider" HorizontalAlignment="Left" Margin="449,438,0,0" VerticalAlignment="Top" Width="123" Height="25" Click="ClickBouttonValiderAjoutClient" Visibility="Hidden"/>
+        <Button Name ="BoutonValiderAjoutCommis" Content="Valider" HorizontalAlignment="Left" Margin="449,476,0,0" VerticalAlignment="Top" Width="123" Height="25" Click="ClickBouttonValiderAjoutCommis" Visibility="Hidden"/>
+        <Button Name ="BoutonValiderAjoutLivreur" Content="Valider" HorizontalAlignment="Left" Margin="449,438,0,0" VerticalAlignment="Top" Width="123" Height="25" Click="ClickBouttonValiderAjoutLivreur" Visibility="Hidden"/>
+
+        <Button Name ="BoutonValiderSuppressionClient" Content="Valider" HorizontalAlignment="Left" Margin="449,438,0,0" VerticalAlignment="Top" Width="123" Height="25" Click="ClickBouttonValiderSuppressionClient" Visibility="Hidden"/>
+        <Button Name ="BoutonValiderSuppressionCommis" Content="Valider" HorizontalAlignment="Left" Margin="449,438,0,0" VerticalAlignment="Top" Width="123" Height="25" Click="ClickBouttonValiderSuppressionCommis" Visibility="Hidden"/>
+        <Button Name ="BoutonValiderSuppressionLivreur" Content="Valider" HorizontalAlignment="Left" Margin="449,438,0,0" VerticalAlignment="Top" Width="123" Height="25" Click="ClickBouttonValiderSuppressionLivreur" Visibility="Hidden"/>
+
+        <Button Name ="BoutonValiderNumeroClient" Content="Valider" HorizontalAlignment="Left" Margin="600,75,0,0" VerticalAlignment="Top" Width="123" Height="25" Click="ClickBouttonNumeroClient" Visibility="Hidden"/>
+        <Button Name ="BoutonValiderModificationClient" Content="Valider" HorizontalAlignment="Left" Margin="449,438,0,0" VerticalAlignment="Top" Width="123" Height="25" Click="ClickBouttonValiderModificationClient" Visibility="Hidden"/>
+        <Button Name ="BoutonValiderNumeroCommis" Content="Valider" HorizontalAlignment="Left" Margin="600,75,0,0" VerticalAlignment="Top" Width="123" Height="25" Click="ClickBouttonNumeroCommis" Visibility="Hidden"/>
+        <Button Name ="BoutonValiderModificationCommis" Content="Valider" HorizontalAlignment="Left" Margin="449,438,0,0" VerticalAlignment="Top" Width="123" Height="25" Click="ClickBouttonValiderModificationCommis" Visibility="Hidden"/>
+        <Button Name ="BoutonValiderNumeroLivreur" Content="Valider" HorizontalAlignment="Left" Margin="600,75,0,0" VerticalAlignment="Top" Width="123" Height="25" Click="ClickBouttonNumeroLivreur" Visibility="Hidden"/>
+        <Button Name ="BoutonValiderModificationLivreur" Content="Valider" HorizontalAlignment="Left" Margin="449,438,0,0" VerticalAlignment="Top" Width="123" Height="25" Click="ClickBouttonValiderModificationLivreur" Visibility="Hidden"/>
+
+        <Button Content ="Menu principal" Name="BoutonQuitter" HorizontalAlignment="Left" Margin="449,530,0,0" VerticalAlignment="Top" Width="123" Click="RetourMenuPrincipal" Height="26"/>
+    </Grid>
+</Window>
+
+

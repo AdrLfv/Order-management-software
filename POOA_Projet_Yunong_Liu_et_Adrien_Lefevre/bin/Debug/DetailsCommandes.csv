@@ -1,0 +1,6 @@
+Num Commande;Nom Item;Prix;Type;Taille;Volume (cl);Quantite
+111;Pizza;22;Vegetarienne;Grande;;2
+111;Coca;5;;;33;2
+111;Pizza;20;4Fromages;Grande;;2
+112;Jus d'orange;12;;;100;3
+112;Pizza;18;Chorizo;Petite;;1

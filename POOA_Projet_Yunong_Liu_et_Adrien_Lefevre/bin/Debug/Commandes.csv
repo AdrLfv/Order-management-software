@@ -1,0 +1,4 @@
+Num Commande;heure;jour;client;commis;livreur;etat;solde
+111;18:52:12;02/01/2019;601020304;Cene;chenal;fermee;ok
+112;07:12:23;03/01/2021;601020304;Chene;chenal;fermee;ok
+113;12:30:50;03/01/2021;601020305;Ormal;chenal;fermee;perdue

@@ -1,0 +1,9 @@
+﻿<Application x:Class="POOA_Projet_Yunong_Liu_et_Adrien_Lefevre.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:POOA_Projet_Yunong_Liu_et_Adrien_Lefevre"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>

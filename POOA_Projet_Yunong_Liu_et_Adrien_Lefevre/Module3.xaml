@@ -1,0 +1,44 @@
+﻿<Window x:Class="POOA_Projet_Yunong_Liu_et_Adrien_Lefevre.Module3"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:POOA_Projet_Yunong_Liu_et_Adrien_Lefevre"
+        mc:Ignorable="d"
+        Title="Module3" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                <GradientStop Color="White"/>
+                <GradientStop Color="#FFBB8102" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <ListBox HorizontalAlignment="Left" Height="202" Margin="153,28,0,0" VerticalAlignment="Top" Width="494" Name="MaListBox">
+            <Button Content="Afficher le nombre de commandes gérées par commis" Width="480" Height="35" FontSize="20" FontFamily="Dubai Medium"  Click="AfficherCommisCommandes"/>
+            <Button Content="Afficher le nombre de livraisons effectuées par livreur" Width="480" Height="35" FontSize="20" FontFamily="Dubai Medium"  Click="AfficherLivreurLivraisons"/>
+            <Button Content="Afficher les commandes selon une période de temps" Width="480" Height="35" FontSize="20" FontFamily="Dubai Medium"  Click="AfficherCommandePeriode"/>
+            <Button Content="Afficher la moyenne des prix des commandes" Width="480" Height="35" FontSize="20" FontFamily="Dubai Medium"  Click="MoyenneCommande"/>
+            <Button Content="Afficher la moyenne des comptes clients" Width="480" Height="35" FontSize="20" FontFamily="Dubai Medium"  Click="MoyenneCptClient"/>
+
+        </ListBox>
+
+        <StackPanel Name ="PanelBoxEtBlocksPeriode" HorizontalAlignment="Left" Height="170" Margin="185,44,0,0" VerticalAlignment="Top" Width="387" Visibility="Hidden">
+            <TextBlock TextWrapping="Wrap" Text="Rentrez le jour"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="" Margin="0,0,0,20" Name="TextBoxPeriodeJour"/>
+            <TextBlock TextWrapping="Wrap" Text="Rentrez le mois"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="" Margin="0,0,0,20" Name="TextBoxPeriodeMois"/>
+            <TextBlock TextWrapping="Wrap" Text="Rentrez l'annee"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="" Margin="0,0,0,20" Name="TextBoxPeriodeAnnee"/>
+        </StackPanel>
+
+        <Button Content ="Menu principal" Name="BoutonQuitter" HorizontalAlignment="Left" Margin="449,300,0,0" VerticalAlignment="Top" Width="123" Click="RetourMenuPrincipal" Height="26" Visibility="Visible"/>
+
+        <Button Name ="BoutonValiderPeriode" Content="Valider" HorizontalAlignment="Left" Margin="449,331,0,0" VerticalAlignment="Top" Width="123" Height="25" Click="ClickBouttonValiderDate" Visibility="Visible"/>
+
+        <TextBox Name ="MaTexteBox" HorizontalAlignment="Left" Height="26" Margin="599,362,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="125" Visibility="Visible"/>
+        <TextBlock Name ="MonTexteBlock" HorizontalAlignment="Left" Margin="54,300,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="111" Width="270" Background="White" Visibility="Visible"/>
+
+    </Grid>
+</Window>
+
+
